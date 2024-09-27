@@ -1,6 +1,6 @@
 select * from MARK where MARK.MARK > 6 order by MARK desc;
 
-select * from PAYMENT where PAYMENT.AMOUNT < 300 order by AMOUNT;
+select * from PAYMENT where PAYMENT.AMOUNT < 300 order by AMOUNT asc;
 
 select * from PAYMENTTYPE order by NAME;
 
