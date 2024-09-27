@@ -2,14 +2,12 @@ select * from STUDENT join PUBLIC.MARK M on STUDENT.ID = M.STUDENT_ID where MARK
 
 delete from PAYMENT where STUDENT_ID in (select STUDENT_ID from mark where MARK > 4);
 
-
-CREATE TEMPORARY TABLE toDelete as select distinct STUDENT_ID from MARK where MARK > 4;
+CREATE TEMPORARY TABLE TODELETE as select distinct STUDENT_ID from MARK where MARK > 4;
 delete from PAYMENT where STUDENT_ID in (select STUDENT_ID from toDelete);
 delete from MARK where STUDENT_ID in (select STUDENT_ID from toDelete);
 delete from STUDENT where id in (select STUDENT_ID from toDelete);
 
-select distinct STUDENT_ID from STUDENT join MARK on STUDENT.ID = MARK.STUDENT_ID where MARK < 4 group by STUDENT_ID;
-CREATE TEMPORARY TABLE  toDelete2 as select distinct STUDENT_ID from STUDENT join MARK on STUDENT.ID = MARK.STUDENT_ID where MARK < 4 group by STUDENT_ID;
+CREATE TEMPORARY TABLE  TODELETE as select distinct STUDENT_ID from STUDENT join MARK on STUDENT.ID = MARK.STUDENT_ID where MARK > 4 group by STUDENT_ID;
 delete from PAYMENT where STUDENT_ID in (select STUDENT_ID from toDelete2);
 delete from MARK where STUDENT_ID in (select STUDENT_ID from toDelete2);
 delete from STUDENT where id in (select STUDENT_ID from toDelete2);
