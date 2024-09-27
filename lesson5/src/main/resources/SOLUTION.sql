@@ -4,7 +4,7 @@ SELECT * FROM student WHERE birthday < DATEADD('YEAR', 1, '20001010');
 
 select * from STUDENT where GROUPNUMBER = 10 and birthday > DATEADD(YEAR, 1, '20001010');
 
-select * from STUDENT where GROUPNUMBER in (4, 5, 6);
+select * from STUDENT where GROUPNUMBER in (4, 5, 6) or NAME like '%Mike%';
 
 select * from PAYMENT where PAYMENT_DATE < DATEADD(MONTH, -8, '2001010');
 

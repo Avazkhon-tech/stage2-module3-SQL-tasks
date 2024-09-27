@@ -36,7 +36,9 @@ insert into PAYMENTTYPE(NAME) values ('WEEKLY');
 insert into PAYMENTTYPE(NAME) values ('DAILY');
 
 insert into PAYMENT(TYPE_ID, AMOUNT, PAYMENT_DATE, STUDENT_ID)values (select id from PAYMENTTYPE where name = 'WEEKLY', 100, CURDATE(), SELECT Id from STUDENT where name = 'John');
-
+insert into PAYMENT(TYPE_ID, AMOUNT, PAYMENT_DATE, STUDENT_ID)values (select id from PAYMENTTYPE where name = 'MONTHLY', 100, CURDATE(), SELECT Id from STUDENT where name = 'Oliver');
+insert into PAYMENT(TYPE_ID, AMOUNT, PAYMENT_DATE, STUDENT_ID)values (select id from PAYMENTTYPE where name = 'WEEKLY', 100, CURDATE(), SELECT Id from STUDENT where name = 'Henry');
+insert into PAYMENT(TYPE_ID, AMOUNT, PAYMENT_DATE, STUDENT_ID)values (select id from PAYMENTTYPE where name = 'DAILY', 100, CURDATE(), SELECT Id from STUDENT where name = 'James');
 
 insert into MARK(STUDENT_ID, SUBJECT_ID, MARK) values (select id from STUDENT where name = 'Chris', select id from SUBJECT where NAME = 'Art', 8);
 insert into MARK(STUDENT_ID, SUBJECT_ID, MARK) values (select id from STUDENT where name = 'Oliver', select id from SUBJECT where name = 'History', 5);
