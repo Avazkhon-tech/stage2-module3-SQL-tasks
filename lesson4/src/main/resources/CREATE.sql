@@ -1,4 +1,3 @@
-
 CREATE TABLE student
 (
     id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -6,6 +5,7 @@ CREATE TABLE student
     birthday DATE NOT NULL,
     groupnumber INT NOT NULL
 );
+
 CREATE TABLE subject
 (
     id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
